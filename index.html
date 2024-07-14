@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Drop it like its hot button
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Hi</a></li>
+      <li><a class="dropdown-item" href="#">Hey</a></li>
+      <li><a class="dropdown-item" href="#">Hello</a></li> 
+    </ul>
+  </div>
+
+  <div class="container mt-4">
+    <input type="text" id="nameInput" placeholder="Name" required>
+    <input type="number" id="ageInput" placeholder="Age" required>
+    <button onclick="addRow()" class="btn btn-primary">Submit</button>
+
+    <table class="table mt-4">
+        <tbody id="tableBody"></tbody>
+    </table>
+</div>
+
+<script>
+    function addRow() {
+        var name = document.getElementById('nameInput').value;
+        var age = document.getElementById('ageInput').value;
+        
+        if (name && age) {
+            var tableBody = document.getElementById('tableBody');
+            var newRow = tableBody.insertRow();
+            newRow.innerHTML = '<td>' + name + '</td><td>' + age + '</td>';
+            document.getElementById('nameInput').value = '';
+            document.getElementById('ageInput').value = '';
+        } else {
+            alert('Please fill out all fields.');
+        }
+    }
+   
+
+
+
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js"></script> 
+
+    
+    
+</body>
+</html>
